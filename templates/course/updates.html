@@ -1,0 +1,19 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+    <div class="updates-div">
+        {% for course_update in course_updates %}
+            <div class="update-card">
+                <div class="update-date">{{course_update.date}}</div>
+                <div class="update-content">
+                    <p>{{course_update.content}}</p>
+                </div>
+                <div class="update-resource-link">
+                    <a href="{{course_update.link}}" target="_blank">Find course details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

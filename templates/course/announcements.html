@@ -1,0 +1,19 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    <div class="announcements-div">
+        {% for announcement in announcements %}
+            <div class="announcement-card">
+                <div class="announcement-date">{{announcement.date}}</div>
+                <div class="announcement-content">
+                    <p>{{announcement.content}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

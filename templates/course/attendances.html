@@ -1,0 +1,41 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    <div class="student-attendance-details">
+        {% if request.user.is_authenticated %}
+            <div class="attendance-stats">
+                <div class="total-classes flex-center">
+                    <h5>Classes taken</h5>
+                    <span class="stat-number">{{total_classes}}</span>
+                </div>
+                <div class="total-presents flex-center">
+                    <h5>Classes attended</h5>
+                    <span class="stat-number">{{total_presents}}</span>
+                </div>
+                <div class="total-absents flex-center">
+                    <h5>Classes not attended</h5>
+                    <span class="stat-number">{{total_absents}}</span>
+                </div>
+            </div>
+        {% else %}
+            <div class="attendance-login">
+                <p>log in to view your attendance details for this course</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="attendance-div">
+        <span class="click-to-view">Click to view detailed attendance</span>
+        {% for course_attendance in course_attendances %}
+            <div class="attendance-item">
+                <a href="{% url 'attendance-details' course_attendance.id %}" target="_blank">
+                    Attendance for {{course_attendance.course}} on {{course_attendance.date}}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

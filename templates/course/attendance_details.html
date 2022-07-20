@@ -1,0 +1,23 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+    <table class="attendance-table">
+        <tr class="head-row">
+            <th>Index</th>
+            {% for column in columns %}
+                <th>{{column}}</th>
+            {% endfor %}
+        </tr>
+
+        {% for ind, name, enrollment_no, attendance in attendance_table %}
+            <tr>
+                <td class="index-column">{{ind}}</td>
+                <td class="name-column">{{name}}</td>
+                <td class="enrollment-column">{{enrollment_no}}</td>
+                <td class="attendance-column">{{attendance}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

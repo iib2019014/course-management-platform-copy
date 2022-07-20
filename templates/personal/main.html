@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management Platform</title>
+
+
+    {% include 'personal/styles.html' %}
+</head>
+<body>
+    <div class="site-head">
+        <h3>Course Management Platform</h3>
+
+        <a href="{% url 'home' %}" class="back-to-home">Home</a>
+
+        <div class="authentication-div">
+            {% if request.user.is_authenticated %}
+                <div class="username-div flex-center">{{request.user.student.email_record.name}}</div>
+                <div class="logout-div">
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            {% else %}
+                    <div class="sign-up-div">
+                        <a href="{% url 'register' %}">Sign Up</a>
+                    </div>
+                    <div class="sign-in-div">
+                        <a href="{% url 'login' %}">Sign In</a>
+                    </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="site-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+
+    {% include 'personal/scripts.html' %}
+</body>
+</html>

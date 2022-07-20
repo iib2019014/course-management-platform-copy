@@ -1,0 +1,71 @@
+{% extends 'personal/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <form action="" method="post" class="register-form">
+        {% csrf_token %}
+
+        <table class="registration-table" cellspacing="10">
+            <tr class="table-row">
+                <th>
+                    <label for="id_enrollment_no">Enrollment no:</label>
+                </th>
+                <td>
+                    <input type="text" name="enrollment_no" maxlength="255" required id="id_enrollment_no">
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+            
+            <tr class="table-row">
+                <th>
+                    <label for="id_username">Username:</label>
+                </th>
+                <td>
+                    <input type="text" name="username" maxlength="150" required id="id_username">
+                </td>
+                <td>
+                    <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+            
+            <tr class="table-row">
+                <th>
+                    <label for="id_password1">Password:</label>
+                </th>
+                <td>
+                    <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+                </td>
+                <td>
+                    <span class="helptext">
+                        <ul>
+                            <li>Your password can't be too similar to your other personal information.</li>
+                            <li>Your password must contain at least 8 characters.</li>
+                            <li>Your password can't be a commonly used password.</li>
+                            <li>Your password can't be entirely numeric.</li>
+                        </ul>
+                    </span>
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+            
+            <tr class="table-row">
+                <th>
+                    <label for="id_password2">Password confirmation:</label>
+                </th>
+                <td>
+                    <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+                </td>
+                <td>
+                    <span class="helptext">Enter the same password as before, for verification.</span>
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+        </table>
+
+        <button type="submit" class="btn btn-primary sign-up-btn">sign up</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    <div class="materials-div">
+        {% for course_material in course_materials %}
+            <div class="material-card">
+                <p>{{course_material.material_name}}</p>
+                <a href="{{course_material.material_file.url}}" target="_blank" class="click-for-file">Click here for file</a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

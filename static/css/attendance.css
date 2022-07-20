@@ -1,0 +1,147 @@
+@import url(./globals.css);
+@import url(./variables.css);
+
+
+
+/* Attendance */
+
+
+.attendance-div {
+    padding: 1rem;
+    /* border: var(--border-red); */
+
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+}
+
+.click-to-view {
+    padding: .2rem;
+
+    background-color: var(--clr-teal-3);
+    color: var(--clr-grey-800);
+    font-family: var(--font-alert);
+
+    font-size: 1.1rem;
+
+    border-radius: 10px;
+}
+
+.attendance-item {
+    margin: .5rem 0;
+}
+
+
+
+/* Attendance Details */
+
+
+.attendance-table {
+    width: 100%;
+
+    padding: 1rem;
+
+    font-family: var(--font-primary);
+}
+
+.attendance-table .head-row th {
+    background-color: var(--clr-grey-300);
+    padding: .5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.attendance-table .index-column {
+    width: 8rem;
+    background-color: var(--clr-grey-300);
+    /* border: 1px solid var(--clr-grey-500); */
+    padding: .5rem;
+    font-size: 1.1rem;
+}
+
+.attendance-table .name-column, .attendance-table .enrollment-column {
+    background-color: var(--clr-grey-300);
+    /* border: 1px solid var(--clr-grey-500); */
+    padding: .5rem;
+    font-size: 1.1rem;
+}
+
+.attendance-table .attendance-column {
+    background-color: var(--clr-grey-300);
+    /* border: 1px solid var(--clr-grey-500); */
+    padding: .5rem;
+    font-size: 1.1rem;
+}
+
+
+.attendance-login {
+    padding: .2rem;
+
+    border-radius: 5px;
+
+    font-size: 1.2rem;
+
+    background-color: var(--clr-grey-200);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--font-primary);
+}
+
+.attendance-login p {
+    margin: 0;
+}
+
+.attendance-stats {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.total-classes {
+    width: 15rem;
+    /* height: 6rem; */
+    /* border: var(--border-red); */
+    padding: .4rem;
+
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px -20px;
+
+    font-family: var(--font-primary);
+
+}
+
+.total-presents {
+    width: 15rem;
+    /* height: 6rem; */
+    /* border: var(--border-red); */
+    padding: .4rem;
+
+    background-color: lightgreen;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px -20px;
+
+    font-family: var(--font-primary);
+
+}
+
+.total-absents {
+    width: 15rem;
+    /* height: 6rem; */
+    /* border: var(--border-red); */
+    padding: .4rem;
+
+    background-color: pink;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px -20px;
+
+    font-family: var(--font-primary);
+
+}
+
+.stat-number {
+    font-size: 3rem;
+}

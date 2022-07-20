@@ -1,0 +1,24 @@
+{% extends 'personal/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="facultys-div row">
+        {% for faculty in facultys %}
+            <div class="faculty-card col-md-4">
+                <div class="faculty-image">
+                    <img src="" alt="faculty image">
+                </div>
+                <div class="faculty-details">
+                    <p class="faculty-name">{{faculty.name}}</p>
+                    <p class="faculty-email">{{faculty.email}}</p>
+                    <a href="{% url 'course-list' faculty.id %}" class="click-for-more">Click to see the courses details.</a>
+                </div>
+            </div>
+        {% endfor %}
+        
+    </div>
+
+
+{% endblock %}

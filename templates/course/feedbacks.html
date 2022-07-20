@@ -1,0 +1,80 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    <div class="feedbacks-stats">
+        <div class="total-feedbacks flex-center">
+            <h5>Total Feedbacks</h5>
+            <span class="stat-number">{{total_feedbacks}}</span>
+        </div>
+
+        <div class="highest-rate flex-center">
+            <h5>Highest Rating</h5>
+            <span class="stat-number">{{highest_rate}}</span>
+        </div>
+
+        <div class="rate-frequencies flex-center">
+            <table class="rates-table">
+                <tr>
+                    <td class="rate-column">Rate</td>
+                    <td class="frequency-column">Frequency</td>
+                </tr>
+                <tr>
+                    <td class="rate-column">5</td>
+                    <td class="frequency-column">{{rate_5}}</td>
+                </tr>
+                <tr>
+                    <td class="rate-column">4</td>
+                    <td class="frequency-column">{{rate_4}}</td>
+                </tr>
+                <tr>
+                    <td class="rate-column">3</td>
+                    <td class="frequency-column">{{rate_3}}</td>
+                </tr>
+                <tr>
+                    <td class="rate-column">2</td>
+                    <td class="frequency-column">{{rate_2}}</td>
+                </tr>
+                <tr>
+                    <td class="rate-column">1</td>
+                    <td class="frequency-column">{{rate_1}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% if request.user.is_authenticated %}
+    
+        <div class="feedback-submission">
+            <a href="{% url 'submit-feedback' course.id %}" target="_blank">Submit your feedback for this course</a>
+        </div>
+
+    {% endif %}
+
+
+    <div class="feedbacks-div">
+        {% for course_feedback in course_feedbacks %}
+            <div class="feedback-card">
+                <div class="feedback-rate flex-center"><span>{{course_feedback.rate}}</span></div>
+                <div class="feedback-review flex-center">
+                    <p>{{course_feedback.review}}</p>
+                </div>
+            </div>
+            <div class="feedback-qandas">
+                {% for feedbackqanda in course_feedback.feedbackqanda_set.all %}
+                <div class="feedback-question">
+                    <span>Q</span>
+                    <p>{{feedbackqanda.question}}?</p>
+                </div>
+                    <div class="feedback-answer">
+                    <span>A</span>
+                    <p>{{feedbackqanda.answer}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

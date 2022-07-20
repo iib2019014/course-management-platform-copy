@@ -1,0 +1,270 @@
+@import url(./globals.css);
+@import url(./variables.css);
+
+
+.courses-div {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+
+.course-card {
+    font-family: var(--font-primary);
+
+    display: flex;
+
+    padding: .5rem;
+    margin: 1rem .5rem;
+
+    border-radius: var(--border-radius-1);
+
+    background-color: var(--clr-vintage-4);
+    color: var(--clr-vintage-1);
+    font-size: 1.2rem;
+
+    box-shadow: 10px 10px 20px -20px;
+}
+
+.message-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-primary);
+    font-size: 2rem;
+}
+
+.message-text {
+    margin: 0 .5rem 0 0;
+}
+
+.dismisser {
+    cursor: pointer;
+}
+
+.course-page-head {
+    display:flex;
+    justify-content: space-around;
+
+    margin: -.5rem 0 1rem 0;
+
+    font-family: var(--font-primary);
+
+    /* background-color: var(--clr-grey-300); */
+    border: 5px solid var(--clr-grey-300);
+    padding: .4rem 0;
+
+}
+
+.course-head-item {
+    
+    border-radius: 2px;
+    padding: 5px;
+
+    transition: background-color .5s;
+}
+
+.course-head-item:hover {
+    background-color: var(--clr-grey-800);
+}
+
+.course-head-item > a {
+    color: var(--clr-primary-800);
+    font-size: 1.5rem;
+    font-weight: 900;
+    
+    transition: color .5s;
+}
+.course-head-item:hover > a {
+    color: var(--clr-grey-400);
+}
+
+
+
+
+
+/* Materials */
+
+
+
+.materials-div {
+    padding: 1rem;
+
+    font-family: var(--font-primary);
+}
+
+
+.material-card {
+    margin: 1rem 0;
+    padding: .5rem;
+
+    font-size: 1.2rem;
+
+    background-color: var(--clr-grey-100);
+
+    box-shadow: 10px 10px 20px -20px var(--clr-grey-300);
+}
+
+
+/* Practicals */
+
+.practicals-div {
+    padding: 1rem;
+
+    font-family: var(--font-primary);
+}
+
+.practical-card {
+    margin: 1rem 0;
+    /* padding: .5rem; */
+
+    min-height: 12rem;
+    height: 10rem;
+
+    font-size: 1.2rem;
+
+    background-color: var(--clr-grey-100);
+
+    box-shadow: 10px 10px 20px -20px var(--clr-grey-300);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.practical-body {
+    padding: .5rem;
+}
+
+.practical-table {
+    /* border: var(--border-red); */
+}
+
+.practical-table tr td:first-of-type {
+    width: 10rem;
+}
+
+.practical-file {
+    /* border: var(--border-red); */
+    /* display: flex;
+    align-items: center;
+    justify-content: flex-end; */
+    /* float: right; */
+}
+
+.practical-file > a {
+    font-size: 1.3rem;
+}
+
+.no-file-icon {
+    color: red;
+    font-size: 1.5rem;
+    margin: 0 .2rem 0 0;
+}
+
+.dash-line {
+    width: 2rem;
+}
+
+
+
+
+
+
+
+
+
+/* Announcement */
+
+.announcements-div {
+    padding: 1rem;
+
+    font-family: var(--font-primary);
+}
+
+.announcement-card {
+    margin: 1rem 0;
+    /* padding: .5rem; */
+
+    min-height: 6rem;
+    height: 6rem;
+
+    font-size: 1.2rem;
+
+    /* background-color: var(--clr-grey-100); */
+
+    border-radius: var(--border-radius-1);
+
+    box-shadow: 10px 10px 20px -20px var(--clr-grey-300);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.announcement-date {
+    flex: 1;
+    padding: .5rem;
+    border-radius: var(--border-radius-1);
+
+    /* color: var(--clr-grey-400); */
+    background-color: var(--clr-grey-200);
+}
+
+.announcement-content {
+    flex: 3;
+    padding: .5rem;
+    border-radius: var(--border-radius-1);
+
+    /* color: var(--clr-grey-200); */
+    background-color: var(--clr-grey-100);
+}
+
+
+
+
+/* course updates */
+
+.updates-div {
+    padding: 1rem;
+
+    font-family: var(--font-primary);
+}
+
+.update-card {
+    margin: 1rem 0;
+    /* padding: .5rem; */
+
+    min-height: 6rem;
+    height: 6rem;
+
+    font-size: 1.2rem;
+
+    /* background-color: var(--clr-grey-100); */
+
+    border-radius: var(--border-radius-2);
+
+    box-shadow: 10px 10px 20px -20px var(--clr-grey-300);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.update-resource-link, .update-date {
+    flex: 1;
+    padding: .5rem;
+    border-radius: var(--border-radius-2);
+
+    /* color: var(--clr-grey-400); */
+    background-color: var(--clr-grey-200);
+}
+
+.update-content {
+    flex: 3;
+    padding: .5rem;
+    border-radius: var(--border-radius-2);
+
+    /* color: var(--clr-grey-200); */
+    background-color: var(--clr-grey-100);
+}

@@ -1,0 +1,86 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    <form action="" method="post" enctype="multipart/form-data" class="assignment-submit-form">
+        {% csrf_token %}
+        <table class="assignment-submit-table feedback-submit-table">
+
+            {% for question in questions %}
+                <tr>
+                    <th><label name="questions" for="answers">{{question.question}}</label></th>
+                    <td>
+                        <textarea name="answers" cols="40" rows="2" id="answers"></textarea>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th><label>How would you rate the course:</label></th>
+                <td>
+                
+                    <div id="id_how_would_you_rate_the_course">
+                        <div>
+                            <label for="id_how_would_you_rate_the_course_0"><input type="radio" name="how_would_you_rate_the_course"
+                                    value="1" required id="id_how_would_you_rate_the_course_0">
+                                1</label>
+                        </div>
+                        <div>
+                            <label for="id_how_would_you_rate_the_course_1"><input type="radio" name="how_would_you_rate_the_course"
+                                    value="2" required id="id_how_would_you_rate_the_course_1">
+                                2</label>
+                        </div>
+                        <div>
+                            <label for="id_how_would_you_rate_the_course_2"><input type="radio" name="how_would_you_rate_the_course"
+                                    value="3" required id="id_how_would_you_rate_the_course_2">
+                                3</label>
+                        </div>
+                        <div>
+                            <label for="id_how_would_you_rate_the_course_3"><input type="radio" name="how_would_you_rate_the_course"
+                                    value="4" required id="id_how_would_you_rate_the_course_3">
+                                4</label>
+                        </div>
+                        <div>
+                            <label for="id_how_would_you_rate_the_course_4"><input type="radio" name="how_would_you_rate_the_course"
+                                    value="5" required id="id_how_would_you_rate_the_course_4">
+                                5</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr><td><br></td></tr>
+
+            
+            
+
+            
+            <tr>
+                <th><label for="id_review">Review:</label></th>
+                <td>
+                    <textarea name="review" cols="40" rows="10" id="id_review"></textarea>
+                </td>
+            </tr>
+
+            <tr><td><br></td></tr>
+        
+        </table>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <div class="messages">
+            {% for error in errors%}
+                <div class="message-card">
+                    <p class="message-text"><strong>{{error}}</strong></p>
+                    <div class="dismisser flex-center">
+                        <i class="fas fa-square-xmark"></i>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <script src="{% static 'js/index.js' %}"></script>
+        </div>
+    </form>
+
+{% endblock %}

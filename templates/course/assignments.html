@@ -1,0 +1,50 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    {% if request.user.is_authenticated %}
+        <div class="assignments-div course-assignments">
+            {% for assignment, late, submitted, missing, pending in assignment_submissions %}
+
+                <div class="assignment-card late-assignment">
+                    {% if submitted %}
+                        {% if late %}
+                            <div class="status status-late"><p>Late</p></div>
+                        {% else %}
+                            <div class="status status-submitted"><p>Submitted</p></div>
+                        {% endif %}
+                    {% else %}
+                        {% if missing %}
+                            <div class="status status-missing"><p>Missing</p></div>
+                        {% else %}
+                            <div class="status status-pending"><p>Pending</p></div>
+                        {% endif %}
+                    {% endif %}
+                    <div class="assignment-body">
+                        <p>{{assignment.assignment_name}}</p>
+                        <a href="{{assignment.questions_file.url}}" target="_blank" class="click-for-file">Click here for file</a>
+                        <a href="{% url 'submit-assignment' assignment.id %}" target="_blank" class="click-for-file">Submit your assignment here</a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <div class="assignments-div course-assignments">
+            {% for course_assignment in course_assignments %}
+                <div class="assignment-card">
+                    <div class="status status-none"><p>None</p></div>
+                    <div class="assignment-body">
+                        <p>{{course_assignment.assignment_name}}</p>
+                        <a href="{{course_assignment.questions_file.url}}" target="_blank" class="click-for-file">Click here for file</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+{% endblock %}

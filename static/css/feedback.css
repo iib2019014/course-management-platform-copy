@@ -1,0 +1,188 @@
+@import url(./globals.css);
+@import url(./variables.css);
+
+
+/* Feedback */
+
+.feedback-submission {
+    margin: 1rem 0 0 0;
+    padding: .2rem;
+
+    border-radius: 5px;
+
+    font-size: 1.2rem;
+
+    background-color: var(--clr-grey-200);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-family: var(--font-primary);
+}
+
+.feedbacks-div {
+    padding: 1rem;
+
+    font-family: var(--font-primary);
+}
+
+.feedback-card {
+    margin: 1.5rem 0 0 0;
+    /* padding: .5rem; */
+
+    min-height: 6rem;
+    height: 6rem;
+
+    font-size: 1.2rem;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    background-color: var(--clr-grey-100);
+
+    box-shadow: 10px 10px 20px -20px var(--clr-grey-300);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.feedback-rate {
+    height: 100%;
+    width: 5rem;
+
+    padding: .5rem;
+
+    border: 1px solid var(--clr-vintage-1);
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    font-size: 2rem;
+}
+
+.feedback-review {
+    padding: 0 0 0 1rem;
+}
+
+.feedback-review p {
+    margin: 0;
+}
+
+
+.feedback-submit-table tr > th {
+    width: 25rem;
+}
+
+.feedback-submit-table tr > td div {
+    display: flex;
+}
+
+.feedback-submit-table tr > td div > div {
+    width: 8rem;
+    /* border: var(--border-red); */
+}
+
+
+.feedbacks-stats {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.total-feedbacks {
+    width: 15rem;
+    height: 8rem;
+    padding: .4rem;
+
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px -20px;
+
+    font-family: var(--font-primary);
+}
+
+.highest-rate {
+    width: 15rem;
+    height: 8rem;
+    padding: .4rem;
+
+    background-color: yellow;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px -20px;
+
+    font-family: var(--font-primary);
+}
+
+.rate-frequencies {
+    width: 15rem;
+
+    font-family: var(--font-primary);
+}
+
+.rates-table {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: var(--clr-grey-300);
+    box-shadow: 10px 10px 20px -20px;
+}
+
+.rates-table tr {
+    width: 100%;
+}
+
+.rates-table .rate-column {
+    padding: .2rem;
+    text-align: center;
+    background-color: var(--clr-grey-500);
+}
+
+.rates-table .frequency-column {
+    padding: .2rem;
+    text-align: center;
+    background-color: var(--clr-grey-300);
+}
+
+
+
+.feedback-qandas {
+    padding: .2rem;
+    margin: 0 0 1.5rem 0;
+
+    /* border: var(--border-red); */
+}
+
+.feedback-question {
+    display: flex;
+
+    padding: .2rem;
+    background-color: var(--clr-grey-300);
+}
+
+.feedback-question span {
+    flex: 1;
+}
+
+.feedback-question p {
+    flex: 19;
+}
+
+.feedback-answer {
+    display: flex;
+    
+    padding: .2rem;
+    background-color: var(--clr-grey-100);
+}
+
+.feedback-answer span {
+    flex: 1;
+}
+
+.feedback-answer p {
+    flex: 19;
+}

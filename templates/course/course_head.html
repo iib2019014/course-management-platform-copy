@@ -1,0 +1,55 @@
+{% extends 'personal/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="course-page-head">
+        <!-- course is {{course.id}} -->
+        <div class="course-head-item">
+            <a href="{% url 'materials' course.id %}" class="materials-link">Materials</a>
+        </div>
+        <div class="course-head-item">
+            <a href="{% url 'practicals' course.id %}" class="practicals-link">Practicals</a>
+        </div>
+        <div class="course-head-item">
+            <a href="{% url 'assignments' course.id %}" class="assignments-link">Assignments</a>
+        </div>
+
+        <div class="course-head-item">
+            <a href="{% url 'attendance' course.id %}" class="attendance-link">Attendance</a>
+        </div>
+
+        <div class="course-head-item">
+            <a href="{% url 'feedbacks' course.id %}" class="feedback-link">Feedbacks</a>
+        </div>
+
+        <div class="course-head-item">
+            <a href="{% url 'announcements' course.id %}" class="announcement-link">Announcements</a>
+        </div>
+
+        <div class="course-head-item">
+            <a href="{% url 'course-updates' course.id %}" class="update-link">Updates</a>
+        </div>
+    </div>
+
+    <div class="messages">
+            {% for message in messages%}
+                <div class="message-card">
+                    <p class="message-text"><strong>{{message}}</strong></p>
+                    <div class="dismisser flex-center">
+                        <i class="fas fa-square-xmark"></i>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <script src="{% static 'js/index.js' %}"></script>
+    </div>
+
+
+    {% block course_body %}
+
+
+    {% endblock %}
+
+{% endblock %}

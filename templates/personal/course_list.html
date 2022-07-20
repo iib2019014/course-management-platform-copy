@@ -1,0 +1,30 @@
+{% extends "personal/main.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="courses-div row">
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+                <p class="warn-admin">Logged in as an admin. You do not have access to courses page.</p>
+            {% endif %}
+
+            {% for course in student_courses %}
+                <a href="{% url 'details' course.id %}" class="course-card flex-center col-md-3">
+                    <p class="course-name">{{ course.course_name }}</p>
+                    <p class="course-code">{{ course.course_code }}</p>
+                </a>
+            {% endfor %}
+        {% else %}
+            {% for course in faculty_courses %}
+                <a href="{% url 'details' course.id %}" class="course-card flex-center col-md-3">
+                    <p class="course-name">{{ course.course_name }}</p>
+                    <p class="course-code">{{ course.course_code }}</p>
+                </a>
+            {% endfor %}
+        {% endif %}
+        
+    </div>
+
+{% endblock %}

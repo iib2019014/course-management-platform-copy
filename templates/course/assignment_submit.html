@@ -1,0 +1,23 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    <form action="" method="post" enctype="multipart/form-data" class="assignment-submit-form">
+        {% csrf_token %}
+        <table class="assignment-submit-table">
+            <tr class="table-row">
+                <th>
+                    <label for="id_answer_file">Answer File:</label>
+                </th>
+                <td>
+                    <input type="file" name="answer_file" required id="id_answer_file">
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'course/course_head.html' %}
+{% load static %}
+
+
+{% block course_body %}
+
+    <div class="practicals-div">
+
+        {% if request.user.is_authenticated %}
+        
+            {% for practical, submitted in practical_submissions %}
+                <div class="practical-card">
+                    {% if submitted %}
+                        <div class="status status-submitted"><p>Submitted</p></div>
+                    {% else %}
+                        <div class="status status-pending"><p>Pending</p></div>
+                    {% endif %}
+
+                    <div class="practical-body">
+                        <table class="practical-table">
+                            <tr>
+                                <td>Practical name</td>
+                                <td class="dash-line">-</td>
+                                <td>{{practical.practical_name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Lab room.no</td>
+                                <td class="dash-line">-</td>
+                                <td>{{practical.lab_room_no}}</td>
+                            </tr>
+                            <tr>
+                                <td>Instructor</td>
+                                <td class="dash-line">-</td>
+                                <td>{{practical.instructor}}</td>
+                            </tr>
+                            <tr>
+                                <td>Time</td>
+                                <td class="dash-line">-</td>
+                                <td>{{practical.time}}</td>
+                            </tr>
+                        </table>
+                        <div class="practical-file">
+                            {% if practical.questions_file %}
+                                <a href="{{practical.questions_file.url}}" target="_blank" class="click-for-file">Click here for file</a>
+                            {% else %}
+                                <i class="fa-solid fa-circle-info no-file-icon"></i>
+                                <p class="no-file-text">No file available.</p>
+                            {% endif %}
+                            <a href="{% url 'submit-practical' practical.id %}" target="_blank" class="click-for-file">Submit your practical here</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% else %}
+
+            {% for course_practical in course_practicals %}
+                <div class="practical-card">
+                    <div class="status status-none"><p>Status (None)</p></div>
+                    <div class="practical-body">
+                        <table class="practical-table">
+                            <tr>
+                                <td>Practical name</td>
+                                <td class="dash-line">-</td>
+                                <td>{{course_practical.practical_name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Lab room.no</td>
+                                <td class="dash-line">-</td>
+                                <td>{{course_practical.lab_room_no}}</td>
+                            </tr>
+                            <tr>
+                                <td>Instructor</td>
+                                <td class="dash-line">-</td>
+                                <td>{{course_practical.instructor}}</td>
+                            </tr>
+                            <tr>
+                                <td>Time</td>
+                                <td class="dash-line">-</td>
+                                <td>{{course_practical.time}}</td>
+                            </tr>
+                        </table>
+                        <div class="practical-file">
+                            {% if course_practical.questions_file %}
+                                <a href="{{course_practical.questions_file.url}}" target="_blank" class="click-for-file">Click here for file</a>
+                            {% else %}
+                                <i class="fa-solid fa-circle-info no-file-icon"></i>
+                                <p class="no-file-text">No file available.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% endif %}
+    </div>
+
+{% endblock %}

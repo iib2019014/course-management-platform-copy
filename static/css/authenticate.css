@@ -1,0 +1,77 @@
+@import url(./globals.css);
+@import url(./variables.css);
+
+
+.authentication-div {
+    /* width: 5rem; */
+    /* border: var(--border-red); */
+    display: flex;
+    justify-content: space-around;
+    
+    font-size: 1.4rem;
+}
+
+
+.authentication-div h5 {
+    margin: 0;
+}
+
+.sign-up-div, .logout-div {
+    background-color: var(--clr-vintage-4);
+    border-radius: 5px;
+    padding: .2rem;
+    margin: .5rem;
+}
+
+.sign-in-div {
+    background-color: var(--clr-vintage-4);
+    border-radius: 5px;
+    padding: .2rem;
+    margin: .5rem;
+}
+
+.sign-up-div > a, .sign-in-div > a {
+    color: var(--clr-vintage-1);
+}
+
+
+.register-form, .login-form {
+    /* border: var(--border-red); */
+    width: 75%;
+    margin: 0 auto;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+
+    background-color: var(--clr-grey-100);
+
+    border-radius: 10px;
+}
+
+.registration-table {
+    /* margin: 0 auto; */
+}
+
+.registration-table th, .login-form th {
+    width: 10rem;
+}
+
+.registration-table .helptext {
+    padding: 1rem;
+}
+
+.table-row {
+    padding: .5rem;
+}
+
+.sign-up-btn, .sign-in-btn {
+    /* text-align: center; */
+    font-size: 1.2rem;
+    margin: 1rem 0 0 0;
+}

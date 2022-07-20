@@ -1,0 +1,104 @@
+@import url(./globals.css);
+@import url(./variables.css);
+
+
+/* Assignment */
+
+.assignments-div {
+    padding: 1rem;
+
+    font-family: var(--font-primary);
+}
+
+.assignment-card {
+    margin: 1rem 0;
+    /* padding: .5rem; */
+
+    min-height: 6rem;
+    height: 6rem;
+
+    font-size: 1.2rem;
+
+    background-color: var(--clr-grey-100);
+
+    box-shadow: 10px 10px 20px -20px var(--clr-grey-300);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.assignment-body {
+    padding: .5rem;
+}
+
+.status {
+    height: 100%;
+    /* In order for a percentage value to work for height,
+        the parent's height must be determined. The only exception is the root element <html>, which can be a percentage height */
+    width: 8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.status-none {
+    border: 1px solid var(--clr-vintage-4);
+}
+
+.status-late {
+    border: 1px solid lightgreen;
+}
+
+.status-submitted {
+    border: 1px solid green;
+}
+
+.status-missing {
+    border: 1px solid rgb(255, 59, 59);
+}
+
+.status-pending {
+    border: 1px solid orange;
+}
+
+.status p {
+    padding: 0;
+    margin: 0;
+}
+
+.missing-assignment {
+    color: red;
+}
+
+
+.assignment-submission {
+    margin-right: auto;
+    /* float: right; */
+}
+
+.assignment-submit-form {
+    width: 75%;
+    margin: 0 auto;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+
+    background-color: var(--clr-grey-100);
+
+    border-radius: 10px;
+}
+
+.assignment-submit-table th {
+    width: 5rem;
+}
